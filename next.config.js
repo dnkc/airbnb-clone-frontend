@@ -1,6 +1,13 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
-  reactStrictMode: true,
-}
+const withPlugins = require("next-compose-plugins");
+const withImages = require("next-images");
 
-module.exports = nextConfig
+const nextConfig = {
+  images: {
+    domains: ["links.papareact.com"],
+  },
+};
+
+module.exports = withPlugins([[withImages]], nextConfig);
+
+module.exports = nextConfig;
